@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meal/screens/categories_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -34,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
         
         title: Text("Meal"),
       ),
-      body: null,
+      body: CategoriesScreen(),
       // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
