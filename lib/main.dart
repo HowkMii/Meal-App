@@ -30,7 +30,8 @@ class MyApp extends StatelessWidget {
 
         )
       ),
-      home: MyHomePage(),
+      home: CategoriesScreen(),
+      //home: MyHomePage(),
     );
   }
 }
@@ -51,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
         
         title: Text("Meal"),
       ),
-      body: CategoriesScreen(),
+      body: null,
       // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
