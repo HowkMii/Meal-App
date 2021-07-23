@@ -10,9 +10,12 @@ class CategoryMealsScreen extends StatefulWidget {
 class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
   @override
   Widget build(BuildContext context) {
-
+    final routeArg = ModalRoute.of(context).settings.arguments as Map<String,String>;
+    final categoryId = routeArg['id'];
+    final categoryTitle = routeArg['title'];
+    
     return Scaffold(
-      appBar: AppBar(title: Text("Recipes"),),
+      appBar: AppBar(title: Text(categoryTitle),),
       body: null,
       
     );
