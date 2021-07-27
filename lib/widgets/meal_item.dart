@@ -48,7 +48,7 @@ class MealItem  extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Row(
                 children: [
-                  Row(children: [Icon(Icons.schedule),Text("$duration")]),
+                  Row(children: [Icon(Icons.schedule),Text("$duration min")]),
                   Row(children: [Icon(Icons.access_alarm),Text("")]),
                   Row(children: [Icon(Icons.access_alarm),Text("")]),
                 ],
