@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:meal/models/meal.dart';
 import 'package:meal/screens/meal__detail_screen.dart';
 class MealItem  extends StatelessWidget {
+  final String id;
   final String title;
   final String imageUrl;
   final int duration;
   final Complexity complexity;
   final Affordability affordability;
 
-  const MealItem({ @required this.title,@required this.imageUrl,@required this.duration,@required this.complexity,@required this.affordability});
+  const MealItem({ @required this.id,@required this.title,@required this.imageUrl,@required this.duration,@required this.complexity,@required this.affordability});
   String get ComplexityText{
     switch(complexity){
       case Complexity.Simple:return 'Simple'; break;
@@ -26,7 +27,7 @@ class MealItem  extends StatelessWidget {
     }
   }
   void selectMeal(BuildContext ctx){
-    Navigator.of(ctx).pushNamed(MealDetailScreen.routeName);
+    Navigator.of(ctx).pushNamed(MealDetailScreen.routeName,arguments:id );
   }
   @override
   Widget build(BuildContext context) {
