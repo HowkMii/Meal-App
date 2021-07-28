@@ -30,39 +30,38 @@ class MealDetailScreen extends StatelessWidget {
     final selectedMeal = DUMMY_MEALS.firstWhere((meal) => meal.id ==mealId);
     return Scaffold(
       appBar: AppBar(title: Text(selectedMeal.title)),
-      body: Column(
-        children: [
-          Container(
-            width:double.infinity,
-            height: 300,
-            child: Image.network(selectedMeal.imageUrl, fit: BoxFit.cover),
-          
-          ),
-         buildSectionTitle(context, "Ingredients"),
-         buildContainer( ListView.builder(
-              itemBuilder: (ctx, index)=>Card(
-                color:Theme.of(context).accentColor,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 5,horizontal: 10),
-                  child: Text(selectedMeal.ingredients[index]),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              width:double.infinity,
+              height: 300,
+              child: Image.network(selectedMeal.imageUrl, fit: BoxFit.cover),
+            
+            ),
+           buildSectionTitle(context, "Ingredients"),
+           buildContainer( ListView.builder(
+                itemBuilder: (ctx, index)=>Card(
+                  color:Theme.of(context).accentColor,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 5,horizontal: 10),
+                    child: Text(selectedMeal.ingredients[index]),
+                  ),
                 ),
-              ),
-              itemCount: selectedMeal.ingredients.length,
+                itemCount: selectedMeal.ingredients.length,
 
-            ),),
-         buildSectionTitle(context, "Steps"),
-         buildContainer( ListView.builder(
-              itemBuilder: (ctx, index)=>Card(
-                color:Theme.of(context).accentColor,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 5,horizontal: 10),
-                  child: Text(selectedMeal.steps[index]),
+              ),),
+           buildSectionTitle(context, "Steps"),
+           buildContainer( ListView.builder(
+                itemBuilder: (ctx, index)=>ListTile(
+                  //leading: ,
+                  title: Text(selectedMeal.steps[index]),
                 ),
-              ),
-              itemCount: selectedMeal.steps.length,
+                itemCount: selectedMeal.steps.length,
 
-            ),),
-        ],
+              ),),
+          ],
+        ),
       ),
     );
   }
