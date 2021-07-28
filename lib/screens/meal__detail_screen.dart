@@ -19,6 +19,21 @@ class MealDetailScreen extends StatelessWidget {
             child: Image.network(selectedMeal.imageUrl, fit: BoxFit.cover),
           
           ),
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 10),
+            child: Text("ingradient",style: Theme.of(context).textTheme.title,),
+          ),
+          Container(
+            height: 200,
+            width: 300,
+            child: ListView.builder(
+              itemBuilder: (ctx, index)=>Card(
+                color:Theme.of(context).accentColor,
+              ),
+              itemCount: selectedMeal.ingredients.length,
+
+            ),
+          ),
         ],
       ),
     );
