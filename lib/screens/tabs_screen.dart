@@ -12,6 +12,12 @@ class _TabsScreenState extends State<TabsScreen> {
     return Scaffold(
       appBar: AppBar(title: Text("Meal")),
       body: null,
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Theme.of(context).primaryColor,
+        items: [
+          BottomNavigationBarItem(icon:Icon(Icons.category,),title: Text("Categories"),),
+        ],
+      ),
     );
   }
 }
