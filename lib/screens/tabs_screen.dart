@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:meal/models/category.dart';
+import 'package:meal/screens/categories_screen.dart';
+import 'package:meal/screens/favotites_screen.dart';
 class TabsScreen  extends StatefulWidget {
 
 
@@ -7,6 +10,16 @@ class TabsScreen  extends StatefulWidget {
 }
 int _selectedPageIndex = 0;
 class _TabsScreenState extends State<TabsScreen> {
+  final List<Map<String,Object >> _pages=[
+    {
+      'page':CategoriesScreen(),
+      'title':'Categories',
+    },
+     {
+      'page':FavoritesScreen(),
+      'title':'Your Favorites',
+    },
+  ];
   void _selectPage(int value) {
     setState(() {
           _selectedPageIndex=value;
