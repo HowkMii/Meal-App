@@ -29,8 +29,8 @@ class _TabsScreenState extends State<TabsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Meal")),
-      body: null,
+      appBar: AppBar(title: Text(_pages[_selectedPageIndex]['title'])),
+      body: _pages[_selectedPageIndex]['title'],
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectPage,
         backgroundColor: Theme.of(context).primaryColor,
