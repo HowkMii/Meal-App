@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meal/models/meal.dart';
 class MainDrawer extends StatelessWidget {
   Widget buildListTile(String title,IconData icon){
     return ListTile(
@@ -33,18 +34,7 @@ class MainDrawer extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          ListTile(
-            leading: Icon(Icons.restaurant, size: 26),
-            title: Text(
-              "Meal",
-              style: TextStyle(
-                fontSize: 24,
-                fontFamily: 'RobotoCondensed',
-                fontWeight: FontWeight.bold,
-              ),
-          ),
-            onTap: (){},
-          ),
+          buildListTile("Meal",Icons.restaurant),
           ListTile(
             leading: Icon(Icons.settings, size: 26),
             title: Text(
