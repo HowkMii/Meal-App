@@ -13,20 +13,27 @@ class MainDrawer extends StatelessWidget {
             color: Theme.of(context).primaryColor,
 
             child: Text('Cooking up!',style: TextStyle(
-              fontSize: 26,fontWeight: FontWeight.w900,color: Theme.of(context).accentColor
+              fontSize: 26,fontWeight: FontWeight.w900,color: Colors.white
             ),),
           ),
           SizedBox(
             height: 20,
-
           ),
           ListTile(
-            leading: Icon(Icons.restaurant, size: 25,),
-            title: Text("Meal"),
-          )
+            leading: Icon(Icons.restaurant, size: 26),
+            title: Text(
+              "Meal",
+              style: TextStyle(
+                fontSize: 24,
+                fontFamily: 'RobotoCondensed',
+                fontWeight: FontWeight.bold,
+              ),
+          ),
+            onTap: (){},
+          ),
         ],
-        
-      ),
+       ), 
+      
       
     );
   }
