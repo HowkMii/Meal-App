@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meal/models/meal.dart';
 class MainDrawer extends StatelessWidget {
-  Widget buildListTile(String title,IconData icon){
+  Widget buildListTile(String title,IconData icon, Function tapHandler){
     return ListTile(
             leading: Icon(icon, size: 26),
             title: Text(
@@ -12,7 +12,7 @@ class MainDrawer extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
           ),
-            onTap: (){},
+            onTap: tapHandler,
           );
   }
   @override
@@ -34,8 +34,8 @@ class MainDrawer extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          buildListTile("Meal",Icons.restaurant),
-          buildListTile("Filters",Icons.settings),
+          buildListTile("Meal",Icons.restaurant,(){}),
+          buildListTile("Filters",Icons.settings,(){}),
 
         ],
        ), 
