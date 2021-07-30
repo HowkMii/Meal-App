@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meal/screens/categories_screen.dart';
 import 'package:meal/screens/favotites_screen.dart';
+import 'package:meal/widgets/main_drawer.dart';
 class TabsScreen  extends StatefulWidget {
   @override
   _TabsScreenState createState() => _TabsScreenState();
@@ -42,6 +43,7 @@ class _TabsScreenState extends State<TabsScreen> {
             title: Text("Favorites"),),
         ],
       ),
+      drawer: MainDrawer(),
     );
   }
 
