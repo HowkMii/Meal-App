@@ -24,13 +24,7 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
     }).toList();
      super.didChangeDependencies();
    }
- @override
-   void initState() {
-     // TODO: implement initState
 
-     super.initState();
-   }
- 
  
   void _removeMeal(String mealId){
     setState(() {
