@@ -14,14 +14,20 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
  String categoryTitle;
  List<Meal> displayedMeals;
  @override
-   void initState() {
-     // TODO: implement initState
+   void didChangeDependencies() {
+     // TODO: implement didChangeDependencies
       final routeArg = ModalRoute.of(context).settings.arguments as Map<String,String>;
       final categoryId = routeArg['id'];
       categoryTitle = routeArg['title'];
       displayedMeals = DUMMY_MEALS.where((meal){
         return meal.categories.contains(categoryId);
     }).toList();
+     super.didChangeDependencies();
+   }
+ @override
+   void initState() {
+     // TODO: implement initState
+
      super.initState();
    }
  
