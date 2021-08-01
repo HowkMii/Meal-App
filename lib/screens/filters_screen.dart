@@ -14,7 +14,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
    bool _vegetarian = false; 
    Widget buildSwitchListTile(String title,String descripton, bool currentVlue, Function updateVlue){
      return SwitchListTile(
-                title: Text('title'),
+                title: Text(title),
                 value: currentVlue,
                 subtitle: Text("descripton"),
                 onChanged: updateVlue,
@@ -35,7 +35,16 @@ class _FiltersScreenState extends State<FiltersScreen> {
             children: [
               buildSwitchListTile('Gluten-free', "Only include gluten-free meals ", _glutenFree, (newValue){setState(() {
                               _glutenFree=newValue;
-                            });})
+                            });}),
+              buildSwitchListTile('Lactose-free', "Only include Lactose-free meals ", _lactoseFree, (newValue){setState(() {
+                              _lactoseFree=newValue;
+                            });}),
+              buildSwitchListTile('Vegan', "Only include Vegan meals ", _vegan, (newValue){setState(() {
+                              _vegan=newValue;
+                            });}),
+              buildSwitchListTile('Vegetarian', "Only include Vegetarian meals ", _vegetarian, (newValue){setState(() {
+                              _vegetarian=newValue;
+                            });}),
             ],)),
         ],
         
