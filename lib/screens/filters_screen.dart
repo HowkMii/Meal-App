@@ -16,8 +16,15 @@ class _FiltersScreenState extends State<FiltersScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Your filters"),),
-      body: Center(
-        child: Text("Filters"),
+      body: Column(
+        children: [
+          Container(
+            padding: EdgeInsets.all(20),
+            child: Text("Adjust your meal selection",style: Theme.of(context).textTheme.title,),
+
+          ),
+        ],
+        
         
         
       ),
