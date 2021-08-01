@@ -33,16 +33,9 @@ class _FiltersScreenState extends State<FiltersScreen> {
           ),
           Expanded(child: ListView(
             children: [
-              SwitchListTile(
-                title: Text('Gluten-free'),
-                value: _glutenFree,
-                subtitle: Text("Only include gluten-free meals."),
-                onChanged: (newValue){
-                  setState(() {
-                    _glutenFree  = newValue;                  
-                  });
-                },
-                ),
+              buildSwitchListTile('Gluten-free', "Only include gluten-free meals ", _glutenFree, (newValue){setState(() {
+                              _glutenFree=newValue;
+                            });})
             ],)),
         ],
         
