@@ -23,6 +23,13 @@ class _FiltersScreenState extends State<FiltersScreen> {
             child: Text("Adjust your meal selection",style: Theme.of(context).textTheme.title,),
 
           ),
+          Expanded(child: ListView(
+            children: [
+              SwitchListTile(
+                title: Text('Gluten-free'),
+                value: _glutenFree,
+                )
+            ],)),
         ],
         
         
