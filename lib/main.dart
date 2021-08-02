@@ -21,7 +21,7 @@ class _MyAppState extends State<MyApp> {
     'vegetarian':false
   };
    void _setFilters(Map<String, bool> _filterData){
-     
+
    }
   @override
   Widget build(BuildContext context) {
@@ -52,7 +52,7 @@ class _MyAppState extends State<MyApp> {
         '/': (ctx)=>TabsScreen(),
         CategoryMealsScreen.routeName:(context)=>CategoryMealsScreen(),
         MealDetailScreen.routeName:(context)=>MealDetailScreen(),
-        FiltersScreen.routeName: (context)=>FiltersScreen(),
+        FiltersScreen.routeName: (context)=>FiltersScreen(_setFilters),
       },
       //home: MyHomePage(),
     );

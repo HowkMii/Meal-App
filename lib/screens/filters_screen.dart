@@ -3,6 +3,9 @@ import 'package:meal/widgets/main_drawer.dart';
 class FiltersScreen extends StatefulWidget {
   static const routeName ='/filters';
 
+  final Function  saveFilters;
+  FiltersScreen(this.saveFilters);
+
   @override
   _FiltersScreenState createState() => _FiltersScreenState();
 }
