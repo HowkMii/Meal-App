@@ -29,7 +29,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Your filters"), actions: [IconButton(icon: Icon(Icons.save), onPressed: (){})],),
+      appBar: AppBar(title: Text("Your filters"), actions: [IconButton(icon: Icon(Icons.save), onPressed: widget.saveFilters)],),
       body: Column(
         children: [
           Container(
