@@ -20,6 +20,9 @@ class _MyAppState extends State<MyApp> {
     'vegan':false,
     'vegetarian':false
   };
+   void _setFilters(Map<String, bool> _filterData){
+     
+   }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

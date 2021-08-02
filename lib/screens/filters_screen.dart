@@ -12,6 +12,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
    bool _lactoseFree = false;
    bool _vegan = false;
    bool _vegetarian = false; 
+
    Widget buildSwitchListTile(String title,String descripton, bool currentVlue, Function updateVlue){
      return SwitchListTile(
                 title: Text(title),
@@ -20,6 +21,8 @@ class _FiltersScreenState extends State<FiltersScreen> {
                 onChanged: updateVlue,
                 );
    }
+
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
