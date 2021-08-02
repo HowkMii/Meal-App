@@ -27,6 +27,21 @@ class _MyAppState extends State<MyApp> {
    void _setFilters(Map<String, bool> _filterData){
      setState(() {
             _filters = _filterData;
+            _availableMeals = DUMMY_MEALS.where((meal){
+              if(_filters['gluteen']&& !meal.isGlutenFree){
+                return false;
+              };
+               if(_filters['lactose']&& !meal.isLactoseFree){
+                return false;
+              }
+               if(_filters['vegan']&& !meal.isVegan){
+                return false;
+              }
+               if(_filters['vegetarian']&& !meal.isVegetarian){
+                return false;
+              }
+              return true;
+            }).toList();
           });
    }
   @override
@@ -56,7 +71,7 @@ class _MyAppState extends State<MyApp> {
       //home: CategoriesScreen(),
       routes: {
         '/': (ctx)=>TabsScreen(),
-        CategoryMealsScreen.routeName:(context)=>CategoryMealsScreen(),
+        CategoryMealsScreen.routeName:(context)=>CategoryMealsScreen(_availableMeals  ),
         MealDetailScreen.routeName:(context)=>MealDetailScreen(),
         FiltersScreen.routeName: (context)=>FiltersScreen(_setFilters),
       },
