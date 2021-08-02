@@ -30,14 +30,14 @@ class _FiltersScreenState extends State<FiltersScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Your filters"), actions: [IconButton(icon: Icon(Icons.save), onPressed:(){
-        final selectedFilters ={
+        final Map<String,bool>selectedFilters ={
           'gluten':_glutenFree,
           'lactose':_lactoseFree,
           'vegan':_vegan,
           'vegetarian':_vegetarian
 
         };
-        widget.saveFilters();
+        widget.saveFilters(selectedFilters);
       } )],),
       body: Column(
         children: [
