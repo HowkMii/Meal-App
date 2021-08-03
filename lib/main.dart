@@ -45,6 +45,9 @@ class _MyAppState extends State<MyApp> {
             }).toList();
           });
    }
+  void _toggleFavorite(String mealId){
+    final existingIndex =_favoriteMeals.indexWhere((meal) => meal.id==mealId)
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
