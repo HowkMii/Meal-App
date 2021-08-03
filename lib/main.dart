@@ -51,7 +51,14 @@ class _MyAppState extends State<MyApp> {
       setState(() {
               _favoriteMeals.removeAt(existingIndex);
             });
+    }else{
+      setState(() {
+              _favoriteMeals.add(DUMMY_MEALS.firstWhere((meal) => meal.id ==mealId));
+            });
     }
+  }
+  bool _isMealFavorite(String id){
+    return _favoriteMeals.any((meal) => meal.id == id);
   }
   @override
   Widget build(BuildContext context) {
@@ -81,7 +88,7 @@ class _MyAppState extends State<MyApp> {
       routes: {
         '/': (ctx)=>TabsScreen(_favoriteMeals),
         CategoryMealsScreen.routeName:(context)=>CategoryMealsScreen(_availableMeals),
-        MealDetailScreen.routeName:(context)=>MealDetailScreen(),
+        MealDetailScreen.routeName:(context)=>MealDetailScreen(_toggleFavorite,_isMealFavorite),
         FiltersScreen.routeName: (context)=>FiltersScreen(_filters,_setFilters),
       },
       //home: MyHomePage(),
