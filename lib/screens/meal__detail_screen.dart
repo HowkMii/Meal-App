@@ -4,6 +4,10 @@ import 'package:meal/dummy_data.dart';
 
 class MealDetailScreen extends StatelessWidget {
   static const routeName = 'meal_detail';
+  final Function toggleFavorite;
+
+  const MealDetailScreen( this.toggleFavorite);
+
   Widget buildSectionTitle(BuildContext context,String text){
     return  Container(
             margin: EdgeInsets.symmetric(vertical: 10),
